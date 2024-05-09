@@ -133,18 +133,6 @@ const fetchGraphData = async () => {
   }
 }
 
-const fetchBlockData = async () => {
-  try {
-    const data = await getLatestBlockList()
-    console.log(data)
-    blocks.value = data.output
-    blockTime.value = data.blockTime
-    loadingBlockTable.value = false
-  } catch (error) {
-    console.error('There was a problem fetching the data:', error)
-  }
-}
-
 const fetchTrxData = async () => {
   try {
     const data = await getLatestTransactionList()
